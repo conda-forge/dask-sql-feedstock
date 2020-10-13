@@ -5,11 +5,9 @@ Home: http://github.com/nils-braun/dask-sql/
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-sql-feedstock/blob/master/LICENSE.txt)
 
 Summary: SQL Query Layer for dask
-
-
 
 Current build status
 ====================
