@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: 34259c0d3b2569bc84723bc15f738fec5a762a702d93014ff1b6336203da22d8
+  sha256: ce4b4b9cb3f182c77cdea0c1fae420a17178a17fda9924c93b56aa75c01438ae
 
 build:
   noarch: python
@@ -26,10 +26,13 @@ requirements:
     - dask >=2.19.0
     - jpype1 >=1.0.2
     - python >=3.6
+    - pandas <1.2.0
     - openjdk >=8
     - fastapi >=0.61.1
     - uvicorn >=0.11.3
     - tzlocal >=2.1
+    - prompt_toolkit >=3.0.8 
+    - pygments >=2.7.3
 
 test:
   imports:
