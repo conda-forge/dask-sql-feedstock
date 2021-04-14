@@ -23,10 +23,10 @@ requirements:
     - python >=3.6
     - setuptools_scm
   run:
-    - dask >=2.19.0
+    - dask >=2.19.0,<=2021.2.0
     - jpype1 >=1.0.2
     - python >=3.6
-    - pandas <1.2.0
+    - pandas <1.2.0,>=1.0.0
     - openjdk >=8
     - fastapi >=0.61.1
     - uvicorn >=0.11.3
