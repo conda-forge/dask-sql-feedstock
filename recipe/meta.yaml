@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: 576f37bb03d676027113f762507b2aacec85773cfbe0e22adcbb21c753b2763a
+  sha256: 5de2d2c8a95bcb16649529989172a29f0d62bc1b8f333d314ecc39454572bff2
 
 build:
   noarch: python
