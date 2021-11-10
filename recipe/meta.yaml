@@ -19,6 +19,8 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - maven >=3.6.0
   host:
     - pip
     - python
@@ -28,6 +30,7 @@ requirements:
     - dask ==2021.10.0
     - pandas >=1.0.0
     - jpype1 >=1.0.2
+    - openjdk >=8
     - fastapi >=0.61.1
     - uvicorn >=0.11.3
     - tzlocal >=2.1
@@ -40,7 +43,6 @@ requirements:
 test:
   imports:
     - dask_sql
-    - dask_sql.input_utils
   commands:
     - pip check
     - dask-sql-server --help
