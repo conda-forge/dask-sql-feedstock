@@ -11,9 +11,12 @@ source:
   sha256: d34d0f48c4989cf1cd33d3379d7b138e204164becb8bbf0b15677f6ade5dd374
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true   # [py2k]
+  entry_points:
+    - dask-sql-server = dask_sql.server.app:main
+    - dask-sql = dask_sql.cmd:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
