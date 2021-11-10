@@ -42,8 +42,11 @@ requirements:
 test:
   imports:
     - dask_sql
+    - dask_sql.input_utils
   commands:
     - pip check
+    - dask-sql-server --help
+    - dask-sql --help
   requires:
     - pip
 
