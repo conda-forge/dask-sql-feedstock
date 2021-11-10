@@ -24,18 +24,18 @@ requirements:
     - python
     - setuptools-scm
   run:
-    - dask==2021.10.0
-    - fastapi >=0.61.1
-    - importlib-metadata  # [py<38]
-    - jpype1 >=1.0.2
-    - nest-asyncio
+    - python
+    - dask ==2021.10.0
     - pandas >=1.0.0
+    - jpype1 >=1.0.2
+    - fastapi >=0.61.1
+    - uvicorn >=0.11.3
+    - tzlocal >=2.1
     - prompt-toolkit
     - pygments
-    - python
+    - nest-asyncio
     - tabulate
-    - tzlocal >=2.1
-    - uvicorn >=0.11.3
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
