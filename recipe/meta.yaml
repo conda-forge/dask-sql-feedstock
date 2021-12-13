@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2021.11.0" %}
+{% set version = "2021.12.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: d34d0f48c4989cf1cd33d3379d7b138e204164becb8bbf0b15677f6ade5dd374
+  sha256: 5d1d22225b9a21a44906110b74a702e66d8b30d2a4c6d4613848d2e79b22e333
 
 build:
   number: 0
@@ -27,7 +27,7 @@ requirements:
     - setuptools-scm
   run:
     - python
-    - dask ==2021.10.0
+    - dask >=2021.11.1,<=2021.11.2
     - pandas >=1.0.0
     - jpype1 >=1.0.2
     - openjdk >=8
