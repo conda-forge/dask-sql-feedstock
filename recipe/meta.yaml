@@ -11,7 +11,7 @@ source:
   sha256: ce3235ba1976014f0a469606b0e5f2ce0305c379532fbdc4cb24b24f4a9d9a61
 
 build:
-  number: 0
+  number: 1
   skip: true   # [py2k]
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
