@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.1.0" %}
+{% set version = "2022.4.0" %}
 
 
 package:
@@ -7,29 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: ce3235ba1976014f0a469606b0e5f2ce0305c379532fbdc4cb24b24f4a9d9a61
+  url: https://github.com/dask-contrib/dask-sql/archive/{{ version }}.tar.gz
+  sha256: 1f9438ed71d60d534e3fd9df13d09c99c7056f600d697d119633c732f92f70a9
 
 build:
-  number: 0
-  skip: true   # [py2k]
   entry_points:
-    - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - maven >=3.6.0
   host:
     - pip
-    - python
-    - setuptools-scm
+    - python >=3.8
   run:
-    - python
-    - dask >=2021.11.1,<=2022.01.0
+    - python >=3.8
+    - dask >=2022.3.0,<2022.4.1
     - pandas >=1.0.0
     - jpype1 >=1.0.2
     - openjdk >=8
@@ -40,14 +36,12 @@ requirements:
     - pygments
     - nest-asyncio
     - tabulate
-    - importlib-metadata  # [py<38]
 
 test:
   imports:
     - dask_sql
   commands:
     - pip check
-    - dask-sql-server --help
     - dask-sql --help
   requires:
     - pip
