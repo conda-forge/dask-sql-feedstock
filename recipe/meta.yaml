@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.6.0" %}
+{% set version = "2022.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: 72479beae84b862674aa0d5f95a4c5c5d5cfa92c3d73005c8c8e8bb29f7eb101
+  sha256: 0452c174c3473768988da55a78541b192264bd8a9e6090e9e7167d3e99a1ceec
 
 build:
   entry_points:
@@ -24,12 +24,12 @@ requirements:
     - pip
     - python >=3.8
   run:
-    - dask >=2022.3.0,<=2022.5.2
-    - fastapi >=0.61.1
+    - dask >=2022.3.0,<=2022.8.0
+    - fastapi >=0.69.0
     - jpype1 >=1.0.2
     - openjdk >=8
     - nest-asyncio
-    - pandas >=1.0.0
+    - pandas >=1.1.2
     - prompt-toolkit
     - pygments
     - python >=3.8
