@@ -23,10 +23,10 @@ requirements:
     - setuptools-rust >=1.4.1
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools-rust >=1.4.1
   run:
-    - python
+    - python >=3.8
     - dask >=2022.3.0
     - pandas >=1.4.0
     - fastapi >=0.69.0
