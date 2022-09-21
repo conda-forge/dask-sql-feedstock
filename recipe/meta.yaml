@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dask-contrib/dask-sql/archive/{{ version }}.tar.gz
-  sha256: 8cf7280cb6529603cb11526932c7485effc6f4efeef22a41a278609bf0a91c9e
+  sha256: 8361981de14f24417c3797c635a6e12f177ed283f73cebe20e6dba55739c8cc0
 
 build:
   skip: true   # [py2k]
