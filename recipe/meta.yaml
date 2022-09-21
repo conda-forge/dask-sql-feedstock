@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.9.0.rc0" %}
+{% set version = "2022.9.0" %}
 
 package:
   name: {{ name|lower }}
