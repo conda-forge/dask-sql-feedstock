@@ -1,0 +1,6 @@
+rust_compiler_version:
+    - 1.62.1
+python:
+    - 3.8.* *_cpython
+    - 3.9.* *_cpython
+    - 3.10.* *_cpython
