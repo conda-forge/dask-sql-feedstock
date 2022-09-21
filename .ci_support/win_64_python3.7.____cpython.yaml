@@ -10,7 +10,5 @@ python:
 - 3.7.* *_cpython
 rust_compiler:
 - rust
-rust_compiler_version:
-- 1.62.1
 target_platform:
 - win-64
