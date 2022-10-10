@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.9.0" %}
+{% set version = "2022.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dask-contrib/dask-sql/archive/{{ version }}.tar.gz
-  sha256: 2841414cf628f8adb7517bde8c3033041bc943ae0612e9c627cdca97551d3c9d
+  sha256: 4f39cb4ed1aced20c07e7f6a93da2e02bc3abc253b474bf35b20dea608a50774
 
 build:
   skip: true  # [py<38 or arm64]
@@ -26,12 +26,12 @@ requirements:
     - python
     - setuptools-rust >=1.4.1
   run:
-    - dask >=2022.3.0,<=2022.9.1
+    - dask >=2022.3.0,<=2022.9.2
     - fastapi >=0.69.0
     - nest-asyncio
     - pandas >=1.4.0
-    - prompt-toolkit
-    - pygments
+    - prompt-toolkit >=3.0.8
+    - pygments >=2.7.1
     - python
     - tabulate
     - tzlocal >=2.1
