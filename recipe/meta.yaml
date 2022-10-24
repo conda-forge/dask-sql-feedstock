@@ -10,7 +10,7 @@ source:
   sha256: 4e839465e0095ff4e00e26e975b702d4dd82765da7acce6fb04db3a8b044e541
 
 build:
-  skip: true  # [py<38 and not arm64]
+  skip: true  # [py<38]
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
