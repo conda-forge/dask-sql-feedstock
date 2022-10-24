@@ -10,7 +10,7 @@ source:
   sha256: 4e839465e0095ff4e00e26e975b702d4dd82765da7acce6fb04db3a8b044e541
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<38 and not arm64]
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
@@ -19,11 +19,13 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('rust') }}
     - setuptools-rust >=1.4.1
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools-rust >=1.4.1
   run:
     - dask >=2022.3.0,<=2022.9.2
@@ -32,7 +34,7 @@ requirements:
     - pandas >=1.4.0
     - prompt-toolkit >=3.0.8
     - pygments >=2.7.1
-    - python
+    - python >=3.8
     - tabulate
     - tzlocal >=2.1
     - uvicorn >=0.11.3
