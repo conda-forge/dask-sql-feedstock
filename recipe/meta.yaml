@@ -28,7 +28,7 @@ requirements:
     - python
     - setuptools-rust >=1.4.1
   run:
-    - dask >=2022.3.0,<=2022.9.2
+    - dask >=2022.3.0,<=2022.10.0
     - fastapi >=0.69.0
     - nest-asyncio
     - pandas >=1.4.0
@@ -37,7 +37,7 @@ requirements:
     - python
     - tabulate
     - tzlocal >=2.1
-    - uvicorn >=0.11.3
+    - uvicorn >=0.13.4
 
 test:
   imports:
