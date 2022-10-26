@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.10.0" %}
+{% set version = "2022.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dask-contrib/dask-sql/archive/{{ version }}.tar.gz
-  sha256: 4f39cb4ed1aced20c07e7f6a93da2e02bc3abc253b474bf35b20dea608a50774
+  sha256: dc17e652b702a631683aedb3ef76ebd71866cbb7d0a97f2aba2575342b01eb7a
 
 build:
   skip: true  # [py<38 or arm64]
