@@ -15,7 +15,7 @@ build:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:
