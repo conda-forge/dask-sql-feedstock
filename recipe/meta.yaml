@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2022.10.1" %}
+{% set version = "2022.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: cce36ce9d2cfb3628f5d5ecb0f418a6e9533a0291b58b387e6aa0c288ea57662
+  sha256: 460cf0c0cad6c7fcbac30341e8607ed6ae032d262b30fe7d686daede98737774
 
 build:
   skip: true  # [py<38]
@@ -15,7 +15,7 @@ build:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -28,7 +28,7 @@ requirements:
     - python
     - setuptools-rust >=1.4.1
   run:
-    - dask >=2022.3.0,<=2022.10.0
+    - dask >=2022.3.0,<=2022.11.1
     - fastapi >=0.69.0
     - nest-asyncio
     - pandas >=1.4.0
