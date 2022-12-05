@@ -28,7 +28,7 @@ requirements:
     - python
     - setuptools-rust >=1.4.1
   run:
-    - dask >=2022.3.0,<=2022.10.0
+    - dask >=2022.3.0,<=2022.11.1
     - fastapi >=0.69.0
     - nest-asyncio
     - pandas >=1.4.0
