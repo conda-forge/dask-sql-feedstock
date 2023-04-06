@@ -1,11 +1,11 @@
-About dask-sql
-==============
+About dask-sql-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-sql-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/dask-contrib/dask-sql/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-sql-feedstock/blob/main/LICENSE.txt)
 
 Summary: SQL query layer for Dask
 
