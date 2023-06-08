@@ -47,6 +47,7 @@ requirements:
     # xref: https://github.com/dask-contrib/dask-sql/issues/1169
     - __glibc >=2.32  # [aarch64]
 
+# FIXME: cannot run tests on aarch64 since conda-forge's testing infra uses glibc 2.17
 test:                         # [not aarch64]
   imports:                    # [not aarch64]
     - dask_sql                # [not aarch64]
