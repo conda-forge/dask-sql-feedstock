@@ -1,0 +1,9 @@
+c_compiler_version:
+    - 11  # [not win64]
+    - 19  # [win64]
+rust_compiler_version:
+    - 1.69
+libprotobuf:
+    - 3
+setuptools_rust:
+    - 1.5.2
