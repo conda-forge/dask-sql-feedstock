@@ -1,9 +1,15 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+c_compiler:
+- clang
+c_compiler_version:
+- '11'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+libprotobuf:
+- '3'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
@@ -14,5 +20,9 @@ python:
 - 3.8.* *_cpython
 rust_compiler:
 - rust
+rust_compiler_version:
+- '1.69'
+setuptools_rust:
+- 1.5.2
 target_platform:
 - osx-64
