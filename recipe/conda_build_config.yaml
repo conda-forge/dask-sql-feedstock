@@ -1,5 +1,6 @@
 c_compiler_version:
-    - 11
+    - 11  # [not win64]
+    - 19  # [win64]
 rust_compiler_version:
     - 1.69
 libprotobuf:
