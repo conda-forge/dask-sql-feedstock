@@ -9,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libprotobuf:
-- '3'
+- '3.21'
 macos_machine:
 - arm64-apple-darwin20.0.0
 pin_run_as_build:
