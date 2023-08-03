@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2023.6.0" %}
+{% set version = "2023.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: 03772eb90fd00de2a88e1d4ea44c90cb58588d86049ab13e0d4f5343ed21b47a
+  sha256: f559c5f9a1408408ae9f6c877b555422d590e93f67f46f670ac2f453572efdd7
 
 build:
   skip: true  # [py<38]
@@ -29,34 +29,27 @@ requirements:
     - python
     - setuptools-rust
     - libprotobuf
+    - xz  # [linux64]
   run:
     - python
-    - dask >=2022.3.0,<=2023.5.1
+    - dask >=2022.3.0,<=2023.7.1
     - pandas >=1.4.0
-    # FIXME: handling is needed for httpx-based fastapi>=0.87.0
-    - fastapi >=0.69.0,<0.87.0
+    - fastapi >=0.92.0
     - uvicorn >=0.13.4
     - tzlocal >=2.1
     - prompt_toolkit >=3.0.8
     - pygments >=2.7.1
     - tabulate
-  run_constrained:
-    # FIXME: aarch64 builds require glibc>=2.32 to prevent TLS allocation error when importing;
-    # is there any way we could modify the TLS model of its shared object to avoid this?
-    # https://bugzilla.redhat.com/show_bug.cgi?id=1722181
-    # xref: https://github.com/dask-contrib/dask-sql/issues/1169
-    - __glibc >=2.32  # [aarch64]
 
-# FIXME: cannot run tests on aarch64 since conda-forge's testing infra uses glibc 2.17
-test:                         # [not aarch64]
-  imports:                    # [not aarch64]
-    - dask_sql                # [not aarch64]
-  commands:                   # [not aarch64]
-    - pip check               # [not aarch64]
-    - dask-sql-server --help  # [not aarch64]
-    - dask-sql --help         # [not aarch64]
-  requires:                   # [not aarch64]
-    - pip                     # [not aarch64]
+test:
+  imports:
+    - dask_sql
+  commands:
+    - pip check
+    - dask-sql-server --help
+    - dask-sql --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/dask-contrib/dask-sql/
