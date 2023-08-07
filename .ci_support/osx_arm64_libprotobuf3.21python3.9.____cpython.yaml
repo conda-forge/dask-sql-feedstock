@@ -1,27 +1,23 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '12'
-cdt_arch:
-- aarch64
-cdt_name:
-- cos7
+- '15'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-docker_image:
-- quay.io/condaforge/linux-anvil-aarch64
 libprotobuf:
-- '3'
+- '3.21'
+macos_machine:
+- arm64-apple-darwin20.0.0
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
 rust_compiler:
 - rust
 rust_compiler_version:
@@ -29,4 +25,4 @@ rust_compiler_version:
 setuptools_rust:
 - 1.5.2
 target_platform:
-- linux-aarch64
+- osx-arm64

@@ -1,17 +1,11 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
 c_compiler:
-- clang
-c_compiler_version:
-- '15'
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 libprotobuf:
-- '3'
-macos_machine:
-- arm64-apple-darwin20.0.0
+- 4.23.3
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -25,4 +19,4 @@ rust_compiler_version:
 setuptools_rust:
 - 1.5.2
 target_platform:
-- osx-arm64
+- win-64
