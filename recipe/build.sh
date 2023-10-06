@@ -22,7 +22,7 @@ declare -a _xtra_maturin_args
 #_xtra_maturin_args+=(--cargo-extra-args="-Zfeatures=itarget")
 # _xtra_maturin_args+=(-Zfeatures=itarget)
 
-if [ "$target_platform" = osx-* ] ; then
+if [ "$target_platform" = "osx-64" ] || [ "$target_platform" = "osx-arm64" ] ; then
     # This variable must be set to the directory containing the target's libpython DSO
     export PYO3_CROSS_LIB_DIR=$PREFIX/lib
 
@@ -40,8 +40,8 @@ linker = "$CC_FOR_BUILD"
 [target.aarch64-apple-darwin]
 linker = "$CC"
 rustflags = [
-"-C", "link-arg=-undefined",
-"-C", "link-arg=dynamic_lookup",
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
 ]
 
 EOF
