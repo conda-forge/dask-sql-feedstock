@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2023.8.0" %}
+{% set version = "2023.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: f559c5f9a1408408ae9f6c877b555422d590e93f67f46f670ac2f453572efdd7
+  sha256: 04d6048f5a2dca6a43b53283b14f3d77efdd14b390bcadd0f2a347fd9817e602
 
 build:
   skip: true  # [py<38]
@@ -15,7 +15,7 @@ build:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
 
 requirements:
   build:
