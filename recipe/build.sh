@@ -48,11 +48,11 @@ EOF
         _xtra_maturin_args+=(--target=x86_64-apple-darwin)
     else
         _xtra_maturin_args+=(--target=aarch64-apple-darwin)
-    fi
 
-    # xref: https://github.com/conda-forge/python-feedstock/issues/621
-    sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/os-patch.py
-    sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/platform-patch.py
+        # xref: https://github.com/conda-forge/python-feedstock/issues/621
+        sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/os-patch.py
+        sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/platform-patch.py
+    fi
 fi
 
 maturin build --release --strip --manylinux off --interpreter="${PYTHON}" "${_xtra_maturin_args[@]}"
