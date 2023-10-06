@@ -29,9 +29,8 @@ if [ "$target_platform" = "osx-64" ] || [ "$target_platform" = "osx-arm64" ] ; t
     # xref: https://github.com/PyO3/pyo3/commit/7beb2720
     export PYO3_PYTHON_VERSION=${PY_VER}
 
-    if [ "$target_platform" = "osx-arm64" ] ; then
-        mkdir -p $SRC_DIR/.cargo
-        cat <<EOF >> $SRC_DIR/.cargo/config
+    mkdir -p $SRC_DIR/.cargo
+    cat <<EOF >> $SRC_DIR/.cargo/config
 # Required for intermediate codegen stuff
 [target.x86_64-apple-darwin]
 linker = "$CC_FOR_BUILD"
@@ -45,12 +44,15 @@ rustflags = [
 ]
 
 EOF
+    if [ "$target_platform" = "osx-64" ] ; then
+        _xtra_maturin_args+=(--target=x86_64-apple-darwin)
+    else
         _xtra_maturin_args+=(--target=aarch64-apple-darwin)
-
-        # xref: https://github.com/conda-forge/python-feedstock/issues/621
-        sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/os-patch.py
-        sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/platform-patch.py
     fi
+
+    # xref: https://github.com/conda-forge/python-feedstock/issues/621
+    sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/os-patch.py
+    sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/platform-patch.py
 fi
 
 maturin build --release --strip --manylinux off --interpreter="${PYTHON}" "${_xtra_maturin_args[@]}"
