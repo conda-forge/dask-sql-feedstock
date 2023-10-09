@@ -22,7 +22,7 @@ declare -a _xtra_maturin_args
 #_xtra_maturin_args+=(--cargo-extra-args="-Zfeatures=itarget")
 # _xtra_maturin_args+=(-Zfeatures=itarget)
 
-rm $SRC_DIR/.cargo/config.toml
+mkdir -p $SRC_DIR/.cargo
 
 if [ "$target_platform" = "osx-64" ] ; then
     cat <<EOF >> $SRC_DIR/.cargo/config
