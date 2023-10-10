@@ -1,7 +1,7 @@
 set RUST_LOG=debug
 set RUST_BACKTRACE=full
 
-maturin build --release --strip --manylinux off --interpreter=%PYTHON%
+maturin build -vv --release --strip --manylinux off --interpreter=%PYTHON%
 
 FOR /F "delims=" %%i IN ('dir /s /b target\wheels\*.whl') DO set dask_sql_wheel=%%i
 
