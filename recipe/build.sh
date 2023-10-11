@@ -2,11 +2,7 @@
 
 set -ex
 
-export RUST_LOG=debug
-export RUST_BACKTRACE=full
-
 # See https://github.com/conda-forge/rust-feedstock/blob/master/recipe/build.sh for cc env explanation
-
 if [ "$c_compiler" = gcc ] ; then
     case "$target_platform" in
         linux-64) rust_env_arch=X86_64_UNKNOWN_LINUX_GNU ;;
@@ -19,8 +15,6 @@ if [ "$c_compiler" = gcc ] ; then
 fi
 
 declare -a _xtra_maturin_args
-#_xtra_maturin_args+=(--cargo-extra-args="-Zfeatures=itarget")
-# _xtra_maturin_args+=(-Zfeatures=itarget)
 
 mkdir -p $SRC_DIR/.cargo
 
@@ -68,5 +62,3 @@ fi
 maturin build -vv --release --strip --manylinux off --interpreter="${PYTHON}" "${_xtra_maturin_args[@]}"
 
 "${PYTHON}" -m pip install $SRC_DIR/target/wheels/dask_sql*.whl --no-deps -vv
-
-# cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
