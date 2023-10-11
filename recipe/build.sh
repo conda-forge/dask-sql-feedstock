@@ -59,6 +59,6 @@ EOF
     sed -i.bak 's,aarch64,arm64,g' $BUILD_PREFIX/venv/lib/platform-patch.py
 fi
 
-maturin build -vv --release --strip --manylinux off --interpreter="${PYTHON}" "${_xtra_maturin_args[@]}"
+maturin build -vv -j "${CPU_COUNT}" --release --strip --manylinux off --interpreter="${PYTHON}" "${_xtra_maturin_args[@]}"
 
 "${PYTHON}" -m pip install $SRC_DIR/target/wheels/dask_sql*.whl --no-deps -vv
