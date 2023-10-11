@@ -10,7 +10,6 @@ source:
   sha256: 04d6048f5a2dca6a43b53283b14f3d77efdd14b390bcadd0f2a347fd9817e602
 
 build:
-  skip: true  # [win]
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
