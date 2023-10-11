@@ -12,6 +12,8 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libprotobuf:
 - 4.24.3
+maturin:
+- '1.1'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -22,9 +24,9 @@ rust_compiler:
 - rust
 rust_compiler_version:
 - '1.69'
-setuptools_rust:
-- 1.5.2
 target_platform:
 - linux-64
 xz:
 - '5'
+zlib:
+- '1.2'
