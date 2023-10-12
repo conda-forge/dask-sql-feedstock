@@ -2,9 +2,14 @@ rust_compiler_version:
     - 1.69
 maturin:
     - 1.1
+
+# The pinnings below allow a matrix build with two libprotobuf versions and
+# replace migrators for libprotobuf 1.57 / 1.58.
 libgrpc:
-    - 1.56
     - 1.58
+    - 1.56
 libprotobuf:
-    - 4.23.3
     - 4.24.3
+    - 4.23.3
+MACOSX_DEPLOYMENT_TARGET:  # [osx and x86_64]
+    - "10.13"              # [osx and x86_64]
