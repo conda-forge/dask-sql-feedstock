@@ -2,6 +2,17 @@ rust_compiler_version:
     - 1.69
 maturin:
     - 1.1
+libgrpc:
+    - 1.56
+    - 1.58
 libprotobuf:
     - 4.23.3
     - 4.24.3
+
+zip_keys:
+  # as of 4.23.x, libprotobuf requires patch-level run-exports;
+  # we couple it with grpc (which very roughly releases in sync)
+  # to reduce the migration pain for these two libs a bit.
+  -
+    - libgrpc
+    - libprotobuf
