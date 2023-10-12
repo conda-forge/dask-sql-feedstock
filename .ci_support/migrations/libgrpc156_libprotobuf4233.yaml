@@ -1,0 +1,17 @@
+__migrator:
+  build_number: 1
+  kind: version
+  use_local: true  # TODO: Remove this line after completing testing
+  migration_number: 1
+libgrpc:
+- "1.56"
+libprotobuf:
+- 4.23.3
+extend_keys:
+- libgrpc
+- libprotobuf
+# already covered by libabseil20230802_libgrpc157_libprotobuf4234,
+# which we cannot delete yet, but keep for clarity
+MACOSX_DEPLOYMENT_TARGET:  # [osx and x86_64]
+- "10.13"                  # [osx and x86_64]
+migrator_ts: 1695803907.2958245
