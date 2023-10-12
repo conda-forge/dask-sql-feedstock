@@ -28,7 +28,6 @@ requirements:
     - pip
     - python
     - maturin
-    - libprotobuf
     - zlib
     - xz  # [linux64]
   run:
