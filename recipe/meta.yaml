@@ -13,14 +13,14 @@ build:
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
-  number: 0
+  number: 1
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - maturin                                # [build_platform != target_platform]
-    - libprotobuf                            # [build_platform != target_platform]
+    - libprotobuf
     - zlib                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
@@ -28,7 +28,6 @@ requirements:
     - pip
     - python
     - maturin
-    - libprotobuf
     - zlib
     - xz  # [linux64]
   run:
