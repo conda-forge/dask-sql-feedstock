@@ -18,5 +18,3 @@ rust_compiler_version:
 - '1.73'
 target_platform:
 - win-64
-zlib:
-- '1.2'

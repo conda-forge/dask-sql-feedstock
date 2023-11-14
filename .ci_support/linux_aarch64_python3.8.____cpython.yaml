@@ -28,5 +28,3 @@ rust_compiler_version:
 - '1.73'
 target_platform:
 - linux-aarch64
-zlib:
-- '1.2'
