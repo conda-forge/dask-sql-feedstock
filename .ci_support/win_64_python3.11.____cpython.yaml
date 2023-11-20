@@ -4,10 +4,8 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-libprotobuf:
-- 4.24.3
 maturin:
-- '1.1'
+- '1.3'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -17,8 +15,6 @@ python:
 rust_compiler:
 - rust
 rust_compiler_version:
-- '1.69'
+- '1.72'
 target_platform:
 - win-64
-zlib:
-- '1.2'
