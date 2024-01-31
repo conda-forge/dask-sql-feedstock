@@ -1,5 +1,5 @@
 {% set name = "dask-sql" %}
-{% set version = "2024.1.0rc0" %}
+{% set version = "2024.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
-  sha256: 8a41362c469e95a0cfaeac93edc6ff4f68249b74c164398821b08a1688414b94
+  sha256: e2f78d99fc71e0e32dbd73496806aee64b38da37b77964172820690b6c9dbddc
 
 build:
   skip: true  # [py<39]
@@ -30,7 +30,7 @@ requirements:
     - xz  # [linux64]
   run:
     - python
-    - dask >=2022.3.0,<=2024.1.0
+    - dask >=2022.3.0,<=2024.1.1
     - pandas >=1.4.0
     - fastapi >=0.92.0
     - httpx >=0.24.1
