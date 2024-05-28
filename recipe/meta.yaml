@@ -23,6 +23,7 @@ requirements:
     - maturin                                # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
+    - {{ stdlib('c') }}
   host:
     - pip
     - python
