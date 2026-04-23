@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dask_sql-{{ version }}.tar.gz
   sha256: 6f9092dfc385a4cc9a5b5385e70dd3e6fc0f04b51e4cffbe4b219141f8cff099
 
 build:
@@ -14,7 +14,7 @@ build:
   entry_points:
     - dask-sql-server = dask_sql.server.app:main
     - dask-sql = dask_sql.cmd:main
-  number: 0
+  number: 1
 
 requirements:
   build:
